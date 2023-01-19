@@ -16,8 +16,6 @@ pipeline {
         
         stage('Create a container') {
             steps {
-WORKDIR /usr/share/nginx/html
-WORKDIR /usr/share/nginx/html
                 sh 'docker run -d --name hyma -p 84:80 -v /home/rishi/hyma:/usr/share/nginx/html hyma:v1'
             }
         }
