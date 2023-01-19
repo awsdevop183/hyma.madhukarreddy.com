@@ -16,14 +16,14 @@ pipeline {
         
         stage('Create a container') {
             steps {
-                sh 'docker run -d --name hyma -p 84:80 -v /home/rishi/hyma:/usr/share/nginx/html hyma:v1'
+                sh 'docker run -d --name hyma -p 84:80 hyma:v1'
             }
         }
-        // stage('Dangling Image remove') {
-        //     steps {
-        //         sh 'docker rmi $(docker images -f dangling=true)'
-        //     }
-        // }
+        stage('Dangling Image remove') {
+            steps {
+                sh 'docker rmi $(docker images -f dangling=true)'
+            }
+        }
         
     }
 }
