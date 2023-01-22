@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Dangling Image remove') {
             steps {
-                sh 'docker image prune -f)'
+                sh 'docker image prune -f'
             }
         }
         
