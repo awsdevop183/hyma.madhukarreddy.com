@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Dangling Image remove') {
             steps {
-                sh 'docker rmi $(docker images -f dangling=true)'
+                sh 'docker image prune -f)'
             }
         }
         
